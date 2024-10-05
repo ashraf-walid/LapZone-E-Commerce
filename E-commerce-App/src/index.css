@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-text-class {
+    @apply text-sm text-custom-gray hover:text-white cursor-pointer duration-300;
+}
+
+
+.product-card:hover {
+        transform: scale(1.02);
+}
+
+.ReturnsPolicy,
+.TermsAndConditions {
+    font-family: 'Cairo', sans-serif; /* Apply Cairo font */
+    direction: rtl; /* Right-to-left layout */
+    text-align: right; /* Align text to the right */
+}
+
+body{
+    font-family: 'ibm-plex-sans-arabic', sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
