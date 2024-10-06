@@ -1,1 +1,0 @@
-import{j as t}from"./index--dqCTnNn.js";function o(){return t.jsx("div",{className:"checkout-container p-8 mx-auto w-3/4",children:t.jsx("h2",{className:"text-2xl font-bold mb-4",children:"Checkout"})})}export{o as default};
