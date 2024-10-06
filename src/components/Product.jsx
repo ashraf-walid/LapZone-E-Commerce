@@ -20,7 +20,7 @@ export const Product = (props) => {
             className=
             "product-card h-72 flex flex-col justify-between items-center pb-4 border border-gray-200 duration-300 hover:shadow-[0_3px_3px_3px_rgba(0,0,0,0.3)] bg-white">
                 <Link to={`/products/${id}`}>
-                <img src={productImage} alt="product" className="w-44"/>
+                <img loading="lazy" src={productImage} alt="product" className="w-44"/>
                 </Link>
                 
                 <div>

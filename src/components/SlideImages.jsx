@@ -64,6 +64,7 @@ export default function SlideImages() {
             >
                 {idx === currentIndex && (
                 <img
+                    loading="lazy"
                     src={slide.url}
                     alt={slide.alt}
                     className="w-full h-64 object-cover rounded-t-md min-[450px]:h-72"
