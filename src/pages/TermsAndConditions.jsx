@@ -1,43 +1,83 @@
-
 const TermsAndConditions = () => {
-return (
-    
-    <div className="TermsAndConditions p-6 bg-gray-100 rounded-lg shadow-md leading-10">
-        <div className="mx-auto w-3/5 p-6 max-[450px]:w-full max-[450px]:p-1">
-        <h1 className="text-3xl font-bold mb-4 text-center">الشروط والأحكام</h1>
-        
-        <h2 className="text-2xl font-semibold mt-6 mb-2">1. مقدمة</h2>
-        <p className="mb-4">
-            هذه الشروط والأحكام تحدد القواعد واللوائح لاستخدام موقعنا. من خلال استخدام الموقع، توافق على الالتزام بهذه الشروط.
-        </p>
+    return (
+      <div className="container mx-auto px-4 py-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+          <h1 className="text-4xl font-black text-center text-gray-800 mb-10 border-b-4 border-blue-500 pb-4">
+            Terms and Conditions
+          </h1>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">2. التعديلات</h2>
-        <p className="mb-4">
-            نحتفظ بالحق في تعديل أو تغيير هذه الشروط في أي وقت. يجب عليك مراجعة هذه الشروط بشكل دوري.
-        </p>
+          <div className="space-y-6 text-gray-700">
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">1. Introduction</h2>
+              <p className="leading-relaxed">
+                Welcome to our website. These Terms and Conditions govern your use of the website and outline your rights and responsibilities. By accessing or using our website, you agree to abide by these terms in full.
+              </p>
+            </section>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">3. حقوق الملكية الفكرية</h2>
-        <p className="mb-4">
-            جميع المحتويات الموجودة على الموقع محمية بموجب حقوق الطبع والنشر والعلامات التجارية. لا يجوز لك نسخ أو توزيع أو استخدام أي محتوى بدون إذن.
-        </p>
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">2. Acceptable Use Policy</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>The website is for personal and lawful use only.</li>
+                <li>Prohibited activities include abusive or defamatory behavior.</li>
+                <li>We reserve the right to restrict access if terms are violated.</li>
+              </ul>
+            </section>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">4. المسئولية</h2>
-        <p className="mb-4">
-            نحن غير مسئولين عن أي أضرار قد تنشأ عن استخدامك للموقع أو عدم القدرة على استخدامه.
-        </p>
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">3. Intellectual Property Rights</h2>
+              <p className="leading-relaxed">
+                All website content, including texts, images, graphics, and logos, is protected under copyright laws. Unauthorized use, reproduction, or distribution of this content is strictly prohibited.
+              </p>
+            </section>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">5. الاتصال بنا</h2>
-        <p className="mb-4">
-            إذا كان لديك أي استفسارات حول هذه الشروط والأحكام، يرجى الاتصال بنا عبر البريد الإلكتروني.
-        </p>
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">4. Privacy and Data Security</h2>
+              <p className="leading-relaxed">
+                We are committed to protecting your personal information in accordance with our Privacy Policy. Your data will not be shared with third parties without your explicit consent.
+              </p>
+            </section>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-2">6. القبول</h2>
-        <p>
-            باستخدامك للموقع، فإنك توافق على هذه الشروط والأحكام. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام الموقع.
-        </p>
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">5. Limitation of Liability</h2>
+              <p className="leading-relaxed">
+                We shall not be liable for any direct, indirect, or consequential damages arising from your use of the website. Liability is limited to the maximum extent permitted by law.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">6. User Responsibilities</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Users must provide accurate and up-to-date information when requested.</li>
+                <li>Account security is the user’s responsibility; do not share login details.</li>
+                <li>Any misuse of the website may result in termination of access.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">7. Amendments to Terms</h2>
+              <p className="leading-relaxed">
+                We reserve the right to update these Terms and Conditions at any time. Continued use of the website indicates acceptance of the updated terms.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">8. Contact Us</h2>
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <p className="font-semibold mb-2">For inquiries and support:</p>
+                <p>Email: support@ourcompany.com</p>
+                <p>Phone: +966-555-123-456</p>
+              </div>
+            </section>
+
+            <section className="bg-gray-100 p-4 rounded-lg text-center">
+              <p className="font-bold text-gray-700">
+                Last Updated: December 2024
+              </p>
+            </section>
+          </div>
         </div>
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
-export default TermsAndConditions;
+  export default TermsAndConditions;

@@ -1,44 +1,69 @@
+import { Link } from 'react-router-dom';
 
 const ReturnsPolicy = () => {
-  return (
-    <div className="ReturnsPolicy p-4 bg-gray-100 rounded-lg shadow-md leading-10">
-      <div className="mx-auto w-3/5 max-[450px]:w-full max-[450px]:p-1">
-        <h2 className="text-3xl font-bold text-center mb-4">سياسة الإرجاع</h2>
-        <p>نهدف إلى تقديم أفضل تجربة تسوق ممكنة لعملائنا، ولذلك نمنحكم سياسة إرجاع مرنة وسهلة. </p>
-        
-        <p className="mb-4"> 
-          إذا كنت غير راضٍ عن أي منتج اشتريته، يمكنك إرجاعه وفق الشروط التالية:
-        </p>
+    return (
+        <div className="container mx-auto px-4 py-8 bg-gray-50">
+            <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <h1 className="text-4xl font-black text-center text-gray-800 mb-10 border-b-4 border-green-500 pb-4">
+                    Return Policy
+                </h1>
 
-        <ul className="list-disc pl-6 mb-4 mr-5">
-          <li className="mb-2">
-            يجب إرجاع المنتج خلال <strong>14 يومًا</strong> من تاريخ الشراء.
-          </li>
-          <li className="mb-2">
-            يجب أن يكون المنتج في حالته الأصلية وغير مستخدم، مع بقاء جميع الملصقات عليه.
-          </li>
-          <li className="mb-2">
-            يجب تقديم إيصال أو إثبات الشراء مع المنتج المُراد إرجاعه.
-          </li>
-          <li className="mb-2">
-            بعض المنتجات غير قابلة للإرجاع، مثل المنتجات المخصصة أو الشخصية.
-          </li>
-        </ul>
+                <div className="space-y-6 text-gray-700">
+                    <p className="leading-relaxed">
+                        We aim to provide the best shopping experience for our customers, which is why we offer a flexible and easy return policy.
+                    </p>
 
-        <p className="mb-4">
-          في حالة وجود أي استفسارات أو مشاكل تتعلق بعملية الإرجاع، يُرجى التواصل مع خدمة العملاء.
-        </p>
+                    <section>
+                        <h2 className="text-2xl font-bold text-green-600 mb-4">Conditions for Returns</h2>
+                        <ul className="list-disc list-inside space-y-2">
+                            <li>The product must be returned within 14 days from the purchase date.</li>
+                            <li>The product must be in its original condition and unused, with all tags attached.</li>
+                            <li>A receipt or proof of purchase must be provided along with the product to be returned.</li>
+                            <li>Some products are non-returnable, such as custom or personalized items.</li>
+                        </ul>
+                    </section>
 
-        <div className="text-center">
-          <a href="https://www.facebook.com/profile.php?id=100090664448464&locale" target='blank'>
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500">
-                تواصل مع خدمة العملاء
-              </button>      
-          </a>
+                    <section>
+                        <h2 className="text-2xl font-bold text-green-600 mb-4">Non-Returnable Items</h2>
+                        <p className="leading-relaxed">
+                            The following items cannot be returned:
+                        </p>
+                        <ul className="list-disc list-inside space-y-2">
+                            <li>Products marked as final sale or clearance.</li>
+                            <li>Perishable goods, including food and beverages.</li>
+                            <li>Opened software, CDs, or DVDs.</li>
+                            <li>Gift cards or store credits.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-green-600 mb-4">Refund Process</h2>
+                        <p className="leading-relaxed">
+                            Once we receive your returned item, we will inspect it and notify you about the status of your refund. If approved, the refund will be processed to your original payment method within 5-7 business days.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-green-600 mb-4">Contact Customer Service</h2>
+                        <div className="bg-green-50 p-4 rounded-lg">
+                            <p className="font-semibold mb-2">For inquiries and support regarding returns:</p>
+                            <p>Email: support@2MTechnology.com</p>
+                            <p>Phone: 01000980788</p>
+                            <p>
+                                Alternatively, visit our <Link to="/Contact" className="text-green-600 underline">Support Page</Link>.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section className="bg-gray-100 p-4 rounded-lg text-center">
+                        <p className="font-bold text-gray-700">
+                            Last Updated: December 2024
+                        </p>
+                    </section>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ReturnsPolicy;

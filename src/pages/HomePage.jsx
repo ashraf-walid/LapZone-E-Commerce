@@ -1,32 +1,25 @@
-import { useContext } from 'react';
-import { ShopContext } from '../context/shop-context';
-import { Product } from '../components/Product';
-import Footer from '../components/Footer';
-import SlideImages from '../components/SlideImages';
+// import SlideImages from '../components/SlideImages';
+import HeroBanner from '../components/home/HeroBanner';
+import CategorySection from '../components/home/CategorySection';
+import FeaturedProducts from '../components/home/FeaturedProducts';
+import TestimonialsSection from '../components/home/TestimonialsSection';
+import PromoSection from '../components/home/PromoSection';
+import ServicesSection from '../components/home/ServicesSection';
+import Footer from '../components/footer/Footer';
 
-
-
-function HomePage() {
-
-    const { filteredProductsList } = useContext(ShopContext); // Access filtered products from context
-
+export default function HomePage() {
     return (
-        <>
-
-            <SlideImages/>
-            
-            <div className='w-[85%] mx-auto grid min-[450px]:w-[75%] sm:grid-cols-2 sm:w-[80%] lg:grid-cols-3 lg:w-[80%]'>
-                {filteredProductsList.map((product) => (
-                    <Product key={product.id} data={product} />
-                ))}
-            </div>
-
-            <Footer/>
-        </>
-    )
+        <div className="min-h-screen">
+          <HeroBanner />
+          <CategorySection />
+          <FeaturedProducts />
+          <TestimonialsSection />
+          <PromoSection />
+          <ServicesSection />
+          <Footer />
+        </div>
+      );
 }
-
-export default HomePage
 
 
 

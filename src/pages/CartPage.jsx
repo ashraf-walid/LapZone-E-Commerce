@@ -1,47 +1,48 @@
+import { useContext } from 'react';
 import { ShopContext } from '../context/shop-context'
-import { useContext, useState, useEffect } from 'react';
-import { Products } from '../products'
-import { ProductInCart } from '../components/ProductInCart'
-import { Link } from 'react-router-dom';
+import { ShoppingBag } from 'lucide-react';
+import CartEmpty from '../components/cart/CartEmpty';
+import CartItem from '../components/cart/CartItem';
+import CartSummary from '../components/cart/CartSummary';
+import CartError from '../components/cart/CartError';
+import CartLoading from '../components/cart/CartLoading';
+import { useCart } from '../hooks/useCart';
 
+export default function CartPage() {
+  const { cartItem, addToCart, removeFromCart, updateQuantityCartItem } = useContext(ShopContext);
+  const { cartProducts, subtotal, loading, error } = useCart(cartItem);
 
-function CartPage() {
-    const { cartItem } = useContext(ShopContext);
-    const [totalAmount , setTotalAmount] = useState(0);
-    // {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+  if (loading) return <CartLoading />;
+  if (error) return <CartError message={error} />;
+  if (cartProducts.length === 0) return <CartEmpty />;
 
-    useEffect(() => {
-        let subtotal = 0;
-        Products.forEach((product) => {
-            if (cartItem[product.id] > 0) {
-                subtotal += product.price * cartItem[product.id];
-            }
-        });
-        setTotalAmount(subtotal);
-    }, [cartItem]); 
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="flex items-center gap-3 mb-8">
+        <ShoppingBag className="w-8 h-8 text-blue-600" />
+        <h1 className="text-3xl font-bold text-gray-900">Shopping Cart</h1>
+      </div>
 
-    return (
-        <>
-            <h1 className='w-fit mx-auto text-4xl my-20'>Your cart item</h1>
-            <div>
-                {Products.map((e)=> {if(cartItem[e.id] > 0) {return <ProductInCart key={e.id} data={e}/>}} )}
-            </div>
-            {totalAmount > 0 ? (
-            <div>
-                <p className="flex items-center justify-center mb-8">Subtotal : ${totalAmount.toFixed(2)}</p>
-                
-                <div className="flex items-center justify-center gap-x-5">
-                    <Link to='/' className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-600 duration-300">continue shopping</Link>
-                    <Link to='/checkout' className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-600 duration-300">checkout</Link>
-                </div>
-            </div>) : (<h1 className='w-fit mx-auto text-4xl mb-20'>Your cart is empty</h1>)}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-6">
+          {cartProducts.map((product) => (
+            <CartItem
+              key={product.id}
+              {...product}
+              onQuantityChange={updateQuantityCartItem}
+              onIncrement={addToCart}
+              onDecrement={removeFromCart}
+            />
+          ))}
+        </div>
 
-            <div className='h-52'></div>
-        </>
-        
-
-    )
+        <div className="lg:col-span-1">
+          <CartSummary 
+            subtotal={subtotal} 
+            itemCount={cartProducts.length} 
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
-
-export default CartPage
-
